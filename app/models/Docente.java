@@ -24,6 +24,10 @@ public class Docente extends Model{
     @Constraints.Min(10)
     public long id;
     
+    @Constraints.Requerid
+    ArrayList<Curso> arrayCurso = new ArrayList<Curso>();
+    
+    
     @Constraints.Required
     public String nombre;
      
@@ -37,7 +41,7 @@ public class Docente extends Model{
     public String telefono;
 
     
-    
     public static Finder<Long, Docente> find = new Finder<Long, Docente>(Docente.class); 
+    
     
 }
