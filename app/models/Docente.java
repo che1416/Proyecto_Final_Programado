@@ -23,7 +23,7 @@ public class Docente extends Model{
     @Id
     @Constraints.Min(10)
     public long id;
-
+    
     @Constraints.Required
     public String nombre;
      
