@@ -5,10 +5,26 @@
  */
 package models;
 
+import java.util.ArrayList;
+import javax.validation.Constraint;
+import play.data.validation.Constraints;
+
 /**
  *
  * @author usuario
  */
-public class Grupo {
+@Entity
+public class Grupo extends Model{
+    @Id
+    @Constraints.Min(10)
+    public long id;
+    
+     @Constraints.Required
+    ArrayList<Estudiante> arrayEstudiante = new ArrayList<Estudiante>();
+    
+   @Constraints.Required
+   public int identificador;
+   
+   public static Finder<Long, Grupo> find = new Finder<Long, Grupo>(Grupo.class); 
     
 }
